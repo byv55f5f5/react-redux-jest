@@ -5,9 +5,16 @@ import { Provider } from 'react-redux';
 
 import app from './App/slice';
 
-function render(ui, { preloadedState, store = configureStore({ reducer: { app }, preloadedState }), ...renderOptions } = {}) {
+function render(
+  ui,
+  {
+    preloadedState,
+    store = configureStore({ reducer: { app }, preloadedState }),
+    ...renderOptions
+  } = {}
+) {
   function Wrapper({ children }) {
-    return (<Provider store={store}>{children}</Provider>);
+    return <Provider store={store}>{children}</Provider>;
   }
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 }

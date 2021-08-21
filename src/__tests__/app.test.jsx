@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import { fireEvent, getByRole, render, screen } from '../test-utils';
 
